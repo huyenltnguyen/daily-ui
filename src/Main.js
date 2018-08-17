@@ -1,9 +1,15 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+import Nav from './Nav';
+import SignUp from './001-sign-up/SignUp';
 
 const Main = () => {
   return (
-    <Route path='/001-sign-up' component={ SignUp } />
+    <Switch>
+      <Route exact path='/' component={ Nav } />
+      <Route path='/001-sign-up' component={ SignUp } />
+    </Switch>
   );
 };
 
