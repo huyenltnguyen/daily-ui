@@ -4,19 +4,29 @@
   .wrapper {
     border: 1px solid #000;
     display: flex;
-    flex-direction: column;
     height: 70%;
-    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 28%;
+    width: 60%;
   }
+}
+
+.Checkout__CardIllustration {
+  background-color: #ba85cc;
+  display: inline-block;
+  width: 60%;
+
+}
+
+.Checkout__Form {
+  display: inline-block;
+  text-align: left;
+  width: 40%;
 
   label {
     display: block;
-    text-align: left;
 
     input {
       display: block;

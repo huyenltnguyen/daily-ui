@@ -2,7 +2,7 @@ import React from 'react';
 
 const CheckoutForm = (props) => {
   return (
-    <div className='CheckoutForm'>
+    <div className='Checkout__Form'>
       <h1>Payment Details</h1>
       <form onSubmit={ (e) => props.handleFormSubmit(e) }>
         <label>

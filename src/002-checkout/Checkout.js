@@ -1,6 +1,7 @@
 import React from 'react';
 import './Checkout.css';
 
+import CardIllustration from './CardIllustration';
 import CheckoutForm from './CheckoutForm';
 
 class Checkout extends React.Component {
@@ -37,6 +38,7 @@ class Checkout extends React.Component {
     return (
       <div className="Checkout">
         <div className='wrapper'>
+          <CardIllustration />
           <CheckoutForm
             handleFormSubmit={ this.handleFormSubmit }
             handleInputChange={ this.handleInputChange }
