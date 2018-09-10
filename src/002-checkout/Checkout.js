@@ -1,6 +1,8 @@
 import React from 'react';
 import './Checkout.css';
 
+import CheckoutForm from './CheckoutForm';
+
 class Checkout extends React.Component {
   constructor() {
     super();
@@ -16,7 +18,6 @@ class Checkout extends React.Component {
   }
 
   handleInputChange(e) {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -36,49 +37,10 @@ class Checkout extends React.Component {
     return (
       <div className="Checkout">
         <div className='wrapper'>
-          <h1>Payment Details</h1>
-          <form onSubmit={ (e) => this.handleFormSubmit(e) }>
-            <label>
-              Name on Card:
-              <input
-                type='text'
-                name='name'
-                placeholder='John Doe'
-                value={ this.state.name }
-                onChange={ (e) => this.handleInputChange(e) } />
-            </label>
-            <label>
-              Card Number:
-              <input
-                type='text'
-                name='cardNumber'
-                placeholder='1234-5678-8765-4321'
-                value={ this.state.cardNumber }
-                onChange={ (e) => this.handleInputChange(e) } />
-            </label>
-            <label>
-              Valid Through:
-              <input
-                type='text'
-                name='expirationDate'
-                placeholder='03/21'
-                value={ this.state.expirationDate }
-                onChange={ (e) => this.handleInputChange(e) } />
-            </label>
-            <label>
-              CVV:
-              <input
-                type='text'
-                name='cvv'
-                placeholder='123'
-                value={ this.state.cvv }
-                onChange={ (e) => this.handleInputChange(e) } />
-            </label>
-            <input
-              type='Submit'
-              value='Proceed'
-              readOnly />
-          </form>
+          <CheckoutForm
+            handleFormSubmit={ this.handleFormSubmit }
+            handleInputChange={ this.handleInputChange }
+            { ...this.state } />
         </div>
       </div>
     );
